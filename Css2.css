@@ -1,0 +1,181 @@
+/* --- THIẾT LẬP CHUNG --- */
+:root {
+    --primary-blue: #0056b3;
+    --accent-red: #a02020;
+    --gold: #ffcc00;
+    --light-bg: #f4f4f4;
+    --text-dark: #333;
+    --shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-dark);
+    background-color: var(--light-bg);
+}
+
+/* --- HEADER & NAVIGATION --- */
+header {
+    background: linear-gradient(rgba(0, 40, 85, 0.8), rgba(0, 40, 85, 0.8)), 
+                url('hero-bg.jpg') center/cover; /* Thay ảnh nền nếu có */
+    color: white;
+    padding: 3rem 1rem;
+    text-align: center;
+    border-bottom: 5px solid var(--accent-red);
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 20px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    padding: 5px 10px;
+}
+
+nav a:hover {
+    color: var(--gold);
+    border-bottom: 2px solid var(--gold);
+}
+
+/* --- BỐ CỤC CHÍNH (GRID HỆ THỐNG) --- */
+.container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.intro-section {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.intro-section h2 {
+    color: var(--accent-red);
+    font-size: 2rem;
+    margin-bottom: 15px;
+    display: inline-block;
+    border-bottom: 3px solid var(--primary-blue);
+    padding-bottom: 10px;
+}
+
+/* Lưới danh sách địa điểm */
+.place-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+/* --- STYLE CHO THẺ ĐỊA DANH (PLACE CARD) --- */
+.place-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.place-card:hover {
+    transform: translateY(-10px); /* Nhảy nhẹ lên khi di chuột */
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+}
+
+.place-card a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.thumbnail-container {
+    overflow: hidden;
+    height: 220px;
+}
+
+.thumbnail {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.place-card:hover .thumbnail {
+    transform: scale(1.1); /* Phóng to ảnh khi di chuột vào thẻ */
+}
+
+.card-content {
+    padding: 20px;
+    flex-grow: 1;
+}
+
+.card-content h3 {
+    color: var(--primary-blue);
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+}
+
+.card-content p {
+    font-size: 0.95rem;
+    color: #666;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* Giới hạn 3 dòng văn bản */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* --- FOOTER --- */
+footer {
+    background: #222;
+    color: white;
+    padding: 50px 20px;
+    text-align: center;
+    margin-top: 60px;
+}
+
+footer h2 {
+    color: var(--gold);
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
+
+footer p {
+    font-size: 0.9rem;
+    opacity: 0.7;
+}
+
+/* --- TƯƠNG THÍCH ĐIỆN THOẠI --- */
+@media (max-width: 768px) {
+    header h1 { font-size: 1.8rem; }
+    
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .place-grid {
+        grid-template-columns: 1fr; /* 1 cột trên điện thoại */
+    }
+}
