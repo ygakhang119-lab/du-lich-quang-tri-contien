@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Điện gió Hướng Hóa - Bản tình ca giữa đại ngàn</title>
+	<link rel="stylesheet" href="Css1.css">
+    <style>
+        :root {
+            --primary-color: #d35400; /* Màu cam đất đại diện cho đất đỏ Khe Sanh */
+            --accent-color: #f1c40f;  /* Màu vàng của nắng và hoàng hôn */
+            --text-color: #2c3e50;
+            --bg-color: #fdfaf5;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            line-height: 1.7;
+            margin: 0;
+            padding: 0;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+        }
+
+        /* Header */
+        header {
+            /* Sử dụng ảnh điện gió làm nền header */
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('đghh.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 60vh;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 3.5rem;
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1100px;
+            margin: -60px auto 50px;
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--accent-color);
+            display: inline-block;
+            margin-bottom: 25px;
+        }
+
+        /* --- PHẦN SLIDER ẢNH TỰ ĐỘNG --- */
+        .slideshow-container {
+            max-width: 100%;
+            position: relative;
+            margin: 20px 0 40px 0;
+            border-radius: 8px;
+            overflow: hidden;
+            height: 450px; 
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .mySlides {
+            display: none;
+            height: 100%;
+        }
+
+        .mySlides img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .fade {
+            animation-name: fade;
+            animation-duration: 1.5s;
+        }
+
+        @keyframes fade {
+            from {opacity: .4} 
+            to {opacity: 1}
+        }
+
+        /* Video Styling */
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
+        }
+
+        .video-card {
+            background: #000;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        video {
+            width: 100%;
+            display: block;
+            outline: none;
+        }
+
+        .video-caption {
+            background: #fff;
+            padding: 15px;
+            font-weight: bold;
+            color: var(--primary-color);
+            text-align: center;
+        }
+
+        .main-img {
+            width: 100%;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        footer {
+            background: #2c3e50;
+            color: #bdc3c7;
+            text-align: center;
+            padding: 40px 0;
+            font-size: 0.9rem;
+        }
+
+        /* Điểm nhấn nghệ thuật - Bài thơ */
+        .poem-highlight {
+            font-family: "Georgia", serif;
+            font-style: italic;
+            font-weight: 800;
+            font-size: 2.2rem;
+            color: #e67e22;
+            line-height: 1.5;
+            margin: 30px 0;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+
+        .btn-visit {
+            display: inline-block;
+            background: var(--accent-color);
+            color: #333;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            margin-top: 20px;
+            transition: 0.3s;
+        }
+
+        .btn-visit:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        @media (max-width: 768px) {
+            .video-grid { grid-template-columns: 1fr; }
+            header h1 { font-size: 2rem; }
+            .container { margin-top: 0; border-radius: 0; }
+            .slideshow-container { height: 250px; }
+            .poem-highlight { font-size: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Điện gió Hướng Hóa</h1>
+        <p>Hơi thở hiện đại giữa mây ngàn Trường Sơn</p>
+    </header>
+
+    <div class="container">
+        <section>
+            <h2>Vẻ đẹp miền biên viễn</h2>
+            <p>
+                Rời xa những ồn ào của phố thị, Cánh đồng điện gió Hướng Hóa (Quảng Trị) hiện ra như một bức tranh kỳ vĩ giữa núi rừng miền Tây. Những trụ turbine khổng lồ trắng muốt vươn mình giữa nền trời xanh biếc, tựa như những chiếc "cối xay gió" trong truyện cổ tích, đang ngày đêm quay đều để dệt nên nguồn năng lượng sạch cho quê hương.
+
+                Nằm ở độ cao lý tưởng, nơi đón những luồng gió đại ngàn thổi về, điện gió Hướng Hóa không chỉ là một dự án kinh tế trọng điểm mà còn trở thành điểm đến "check-in" không thể bỏ qua. Vào những buổi sớm mai khi sương mù còn vắt vẻo ngang sườn núi, hay lúc hoàng hôn buông xuống nhuộm vàng cả cánh đồng, nơi đây mang một vẻ đẹp huyền ảo, khiến bất cứ ai đặt chân đến cũng phải lòng ngay lập tức.
+
+                Hãy để tâm hồn mình hòa vào tiếng gió, ngắm nhìn những cánh quạt khổng lồ xoay giữa đại ngàn và cảm nhận sự thay đổi kỳ diệu của vùng đất Khe Sanh lịch sử.
+            </p>
+            <img src="đghh1.jpg" alt="Toàn cảnh điện gió Hướng Hóa" class="main-img">
+        </section>
+
+        <section>
+            <h2>Khoảnh khắc tuyệt đẹp</h2>
+            <div class="slideshow-container">
+                <div class="mySlides fade">
+                    <img src="đghh2.jpg" alt="Điện gió trong sương">
+                </div>
+                <div class="mySlides fade">
+                    <img src="đghh3.jpg" alt="Hoàng hôn điện gió">
+                </div>
+                <div class="mySlides fade">
+                    <img src="đghh4.jpg" alt="Trụ turbine khổng lồ">
+                </div>
+                <div class="mySlides fade">
+                    <img src="đghh5.jpg" alt="Cung đường điện gió">
+					</div>
+					<div class="mySlides fade">
+                    <img src="đghh6.jpg" alt="Cung đường điện gió">
+                </div>
+				<div class="mySlides fade">
+                    <img src="đghh7.jpg" alt="Cung đường điện gió">
+					</div>
+					<div class="mySlides fade">
+                    <img src="đghh1.jpg" alt="Cung đường điện gió">
+                </div>
+				<div class="mySlides fade">
+                    <img src="đghh.jpg" alt="Điện gió trong sương">
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Video Khám phá & Trải nghiệm</h2>
+            <div class="video-grid">
+                <div class="video-card">
+                    <video controls poster="đghh.jpg">
+                        <source src="đghhvd1.mp4" type="video/mp4">
+                    </video>
+                    <div class="video-caption">Địa điểm săn mây lí tưởng</div>
+                </div>
+
+                <div class="video-card">
+                    <video controls>
+                        <source src="đghhvd2.mp4" type="video/mp4">
+                    </video>
+                    <div class="video-caption">Hành trình đi đến cảnh quan đặc sắc</div>
+                </div>
+            </div>
+        </section>
+    </div>
+	
+    <footer>
+        <section class="invitation-box">
+            <h2>Hành trình về miền mây trắng</h2>
+            
+            <div class="poem-highlight">
+                "Gió hát giữa ngàn, quạt xoay trong mây<br>
+                Hướng Hóa đây rồi, say đắm lòng ai..."
+            </div>
+
+            <p>
+                Đừng chỉ nhìn qua khung hình, hãy một lần xách balo lên và đi để tận mắt chứng kiến sự hùng vĩ của những "cánh tay khổng lồ" giữa mây ngàn. Hướng Hóa luôn dang tay đón đợi bạn bằng sự mộc mạc, hiếu khách và những khoảnh khắc thiên nhiên tuyệt mỹ nhất.
+            </p>
+            <a href="https://www.google.com/maps/search/điện+gió+hướng+hóa" target="_blank" class="btn-visit">Xem vị trí trên bản đồ</a>
+        </section>
+        <p>Bản quyền nội dung © 2026 - Trang CẨM NANG DU LỊCH TỈNH QUẢNG TRỊ</p>
+    </footer>
+
+    <script>
+        let slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+            }
+            
+            slideIndex++;
+            if (slideIndex > slides.length) {slideIndex = 1}    
+            
+            slides[slideIndex-1].style.display = "block";  
+            
+            setTimeout(showSlides, 5000); 
+        }
+    </script>
+
+</body>
+</html>

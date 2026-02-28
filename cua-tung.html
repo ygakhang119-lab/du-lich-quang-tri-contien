@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biển Cửa Tùng - Nữ Hoàng Của Các Bãi Tắm</title>
+	<link rel="stylesheet" href="Css1.css">
+    <style>
+        :root {
+            --primary-color: #005b96; /* Đổi sang màu xanh biển */
+            --accent-color: #ffd700; /* Màu vàng cát */
+            --text-color: #333;
+            --bg-color: #f0f8ff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            line-height: 1.7;
+            margin: 0;
+            padding: 0;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+        }
+
+        /* Header */
+        header {
+            /* Thay bằng ảnh biển Cửa Tùng */
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('bien-cua-tung.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 50vh;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 3.5rem;
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1100px;
+            margin: -60px auto 50px;
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--accent-color);
+            display: inline-block;
+            margin-bottom: 25px;
+        }
+
+        /* --- PHẦN SLIDER ẢNH TỰ ĐỘNG --- */
+        .slideshow-container {
+            max-width: 100%;
+            position: relative;
+            margin: 20px 0 40px 0;
+            border-radius: 8px;
+            overflow: hidden;
+            height: 450px; 
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .mySlides {
+            display: none;
+            height: 100%;
+        }
+
+        .mySlides img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .fade {
+            animation-name: fade;
+            animation-duration: 1.5s;
+        }
+
+        @keyframes fade {
+            from {opacity: .4} 
+            to {opacity: 1}
+        }
+
+        /* Video Styling */
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
+        }
+
+        .video-card {
+            background: #000;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        video {
+            width: 100%;
+            display: block;
+            outline: none;
+        }
+
+        .video-caption {
+            background: #fff;
+            padding: 15px;
+            font-weight: bold;
+            color: var(--primary-color);
+            text-align: center;
+        }
+
+        .main-img {
+            width: 100%;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        footer {
+            background: #002b49;
+            color: #ccc;
+            text-align: center;
+            padding: 30px 0;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .video-grid { grid-template-columns: 1fr; }
+            header h1 { font-size: 2rem; }
+            .container { margin-top: 0; border-radius: 0; }
+            .slideshow-container { height: 250px; }
+        }
+
+        /* Điểm nhấn nghệ thuật */
+        .poem-highlight {
+            font-family: "Georgia", serif;
+            font-style: italic;
+            font-size: 1.8rem;
+            color: #ffd700;
+            margin: 20px 0;
+            line-height: 1.5;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+
+        .btn-visit {
+            display: inline-block;
+            background: var(--accent-color);
+            color: #000;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            margin-top: 20px;
+            transition: 0.3s;
+        }
+
+        .btn-visit:hover {
+            background: #fff;
+            transform: scale(1.05);
+        }
+		/* Tổng thể khung thư mời */
+    .invitation-box {
+        max-width: 600px;
+        margin: 30px auto;
+        padding: 40px;
+        background: #ffffff;
+        border: 1px solid #e0e0e0;
+        border-radius: 15px;
+        text-align: center;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .invitation-box h2 {
+        color: #0077b6;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-bottom: 25px;
+        font-size: 1.5rem;
+    }
+
+    /* Phần cải thiện Câu Thơ */
+    .poem-highlight {
+        font-family: 'Georgia', 'Times New Roman', Times, serif; /* Kiểu chữ có chân nghệ thuật */
+        font-style: italic;
+        font-size: 1.25rem; /* Cỡ chữ lớn hơn một chút */
+        color: #444;
+        line-height: 1.8;
+        margin: 25px 0;
+        padding: 15px;
+        position: relative;
+        display: inline-block;
+    }
+
+    /* Thêm dấu ngoặc kép trang trí */
+    .poem-highlight::before {
+        content: "“";
+        font-size: 4rem;
+        color: #caf0f8;
+        position: absolute;
+        top: -20px;
+        left: -30px;
+        z-index: -1;
+    }
+
+    .poem-highlight::after {
+        content: "”";
+        font-size: 4rem;
+        color: #caf0f8;
+        position: absolute;
+        bottom: -50px;
+        right: -30px;
+        z-index: -1;
+    }
+
+    /* Nội dung mô tả */
+    .invitation-box p {
+        color: #555;
+        line-height: 1.6;
+        margin-bottom: 30px;
+        text-align: justify;
+    }
+
+    /* Nút bấm vị trí */
+    .btn-visit {
+        display: inline-block;
+        padding: 12px 25px;
+        background-color: #0077b6;
+        color: white !important;
+        text-decoration: none;
+        border-radius: 50px;
+        font-weight: bold;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(0,119,182,0.3);
+    }
+
+    .btn-visit:hover {
+        background-color: #00b4d8;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(0,119,182,0.4);
+    }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Biển Cửa Tùng</h1>
+        <p>Nữ hoàng của các bãi tắm - Viên ngọc quý của miền Trung</p>
+    </header>
+
+    <div class="container">
+        <section>
+            <h2>Giới thiệu Thắng cảnh</h2>
+            <p>
+                Tọa lạc tại huyện Vĩnh Linh, tỉnh Quảng Trị, biển Cửa Tùng từ lâu đã nổi tiếng với vẻ đẹp thơ mộng và yên bình. Nơi đây từng được người Pháp mệnh danh là "Nữ hoàng của các bãi tắm" nhờ dải cát trắng mịn màng, làn nước xanh trong vắt và những rặng phi lao rì rào trong gió. 
+
+                Không chỉ là một địa điểm nghỉ dưỡng lý tưởng, Cửa Tùng còn nằm trong vùng giao thoa lịch sử - văn hóa đặc sắc. Đứng bên bờ biển, du khách có thể phóng tầm mắt ngắm nhìn dòng sông Bến Hải đổ ra đại dương, cảm nhận luồng sinh khí tươi mới của một vùng đất đang từng ngày đổi thay nhưng vẫn giữ trọn nét hoang sơ, thuần khiết.
+
+                Đến với Cửa Tùng, bạn không chỉ được hòa mình vào làn nước mát lạnh mà còn có cơ hội thưởng thức những món hải sản tươi ngon đặc trưng của vùng biển miền Trung. Hãy cùng chúng tôi khám phá vẻ đẹp bất tận này qua những thước phim và hình ảnh dưới đây.
+            </p>
+            <img src="cuatung6.jpg" alt="Toàn cảnh biển Cửa Tùng" class="main-img">
+        </section>
+
+        <section>
+            <h2>Hình ảnh Khám phá</h2>
+            <div class="slideshow-container">
+                <div class="mySlides fade">
+                    <img src="cuatung1.jpg" alt="Bình minh Cửa Tùng">
+                </div>
+                <div class="mySlides fade">
+                    <img src="cuatung2.jpg" alt="Bãi cát trắng">
+                </div>
+                <div class="mySlides fade">
+                    <img src="cuatung3.jpg" alt="Rặng phi lao">
+                </div>
+                <div class="mySlides fade">
+                    <img src="cuatung4.jpg" alt="Sóng biển">
+                </div>
+                <div class="mySlides fade">
+                    <img src="cuatung5.jpg" alt="Hoàng hôn trên biển">
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Video Trải nghiệm</h2>
+            <div class="video-grid">
+                <div class="video-card">
+                    <video controls poster="thumb-video-1.jpg">
+                        <source src="cuatungvd1.mp4" type="video/mp4">
+                    </video>
+                    <div class="video-caption">Vẻ đẹp hoang sơ của Nữ hoàng bãi tắm</div>
+                </div>
+
+                <div class="video-card">
+                    <video controls poster="thumb-video-2.jpg">
+                        <source src="cuatungvd2.mp4" type="video/mp4">
+                    </video>
+                    <div class="video-caption">Toàn cảnh Biển Cửa Tùng</div>
+                </div>
+            </div>
+        </section>
+    </div>
+	
+    <footer>
+        <section class="invitation-box">
+    <h2>Hành trình về với đại dương</h2>
+    
+    <div class="poem-highlight">
+        Cửa Tùng cát trắng nắng vàng tươi<br>
+        Sóng vỗ mơn man gọi môi cười...
+    </div>
+
+    <p>
+        Hãy tạm gác lại những âu lo của cuộc sống thường nhật để về với biển Cửa Tùng. Hãy để tiếng sóng vỗ và làn gió biển mặn mòi làm mới tâm hồn bạn. Một không gian yên bình và những trải nghiệm khó quên đang chờ đón bạn tại mảnh đất Vĩnh Linh anh hùng.
+    </p>
+    
+    <a href="https://www.google.com/maps/search/Biển+Cửa+Tùng" target="_blank" class="btn-visit">
+        📍 Xem vị trí trên bản đồ
+    </a>
+</section>
+        <p>Bản quyền nội dung © 2026 - Trang thông tin Du lịch & Thắng cảnh</p>
+    </footer>
+
+    <script>
+        let slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+            }
+            
+            slideIndex++;
+            if (slideIndex > slides.length) {slideIndex = 1}    
+            
+            slides[slideIndex-1].style.display = "block";  
+            
+            setTimeout(showSlides, 5000); 
+        }
+    </script>
+
+</body>
+</html>
